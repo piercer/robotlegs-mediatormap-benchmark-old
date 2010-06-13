@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application 
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 		   
+	xmlns:s="library://ns.adobe.com/flex/spark" 
+	xmlns:mx="library://ns.adobe.com/flex/mx" 
+	xmlns:local="*"
+ 	width="251" 
+	height="117"
+	creationComplete="onCreationComplete(event)"
+>
+	<fx:Script>
+		<![CDATA[
+			import views.TestView2;
+			import mx.events.FlexEvent;
+			
+			private var _view:TestView2;
+
+			protected function onCreationComplete(event:FlexEvent):void
+			{
+				addEventListener(Event.ENTER_FRAME,onEnterFrame);
+			}
+
+			private function onEnterFrame(event:Event):void
+			{
+				if (_view && contains(_view))
+				{
+					removeElement(_view);
+					_view = null;
+				}
+				else
+				{
+					_view = new TestView2();
+					addElement(_view);
+				}
+			}
+
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<local:RobotlegsBenchmarkerContext contextView="{this}"/>		
+	</fx:Declarations>
+	
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+	
+	<s:Label text="Number Registered" height="15" width="108" x="10" y="14"/>
+	<s:Label text="Max" height="15" width="108" x="10" y="39"/>
+	<s:Label text="Min" height="15" width="108" x="10" y="65"/>
+	<s:Label text="Average" height="15" width="108" x="10" y="92"/>
+	<s:Label x="126" y="14" text="0" width="103" height="15" id="numSamples"/>
+	<s:Label x="126" y="40" text="0" width="103" height="15" id="maxValue"/>
+	<s:Label x="126" y="65" text="0" width="103" height="15" id="minValue"/>
+	<s:Label x="126" y="92" text="0" width="103" height="15" id="average"/>
+
+</s:Application>
