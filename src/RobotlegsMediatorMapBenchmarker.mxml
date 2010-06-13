@@ -10,27 +10,33 @@
 >
 	<fx:Script>
 		<![CDATA[
-			import views.TestView2;
 			import mx.events.FlexEvent;
 			
+			import views.TestView2;
+			
 			private var _view:TestView2;
+			private var _iTick:uint;
 
 			protected function onCreationComplete(event:FlexEvent):void
 			{
+				_iTick=0;
 				addEventListener(Event.ENTER_FRAME,onEnterFrame);
 			}
 
 			private function onEnterFrame(event:Event):void
 			{
-				if (_view && contains(_view))
+				if (++_iTick%5==0)
 				{
-					removeElement(_view);
-					_view = null;
-				}
-				else
-				{
-					_view = new TestView2();
-					addElement(_view);
+					if (_view && contains(_view))
+					{
+						removeElement(_view);
+						_view = null;
+					}
+					else
+					{
+						_view = new TestView2();
+						addElement(_view);
+					}
 				}
 			}
 
