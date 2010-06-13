@@ -25,7 +25,7 @@
 
 			private function onEnterFrame(event:Event):void
 			{
-				if (++_iTick%5==0)
+				if (++_iTick%10==0)
 				{
 					if (_view && contains(_view))
 					{

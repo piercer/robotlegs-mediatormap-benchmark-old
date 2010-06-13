@@ -29,6 +29,8 @@ package
 			mediatorMap.mapView(TestView2,TestViewMediator);
 			mediatorMap.mapView(RobotlegsMediatorMapBenchmarker,RobotlegsMediatorMapBenchmarkerMediator);
 			
+			mediatorMap.createMediator(contextView);
+			
 		}
 		
 	}
