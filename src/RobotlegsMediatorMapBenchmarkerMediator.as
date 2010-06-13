@@ -3,11 +3,11 @@ package
 	import org.robotlegs.mvcs.Mediator;
 	import signals.ResultsUpdatedSignal;
 	
-	public class RobotlegsBenchmarkerMediator extends Mediator
+	public class RobotlegsMediatorMapBenchmarkerMediator extends Mediator
 	{
 		
 		[Inject] public var resultsUpdatedSignal:ResultsUpdatedSignal;
-		[Inject] public var view:RobotlegsBenchmarker;
+		[Inject] public var view:RobotlegsMediatorMapBenchmarker;
 				
 		override public function onRegister():void
 		{

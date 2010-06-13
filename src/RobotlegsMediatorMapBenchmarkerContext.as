@@ -15,7 +15,7 @@ package
 	import views.TestView2;
 	import views.TestViewMediator;
 	
-	public class RobotlegsBenchmarkerContext extends SignalContext
+	public class RobotlegsMediatorMapBenchmarkerContext extends SignalContext
 	{
 				
 		override public function startup():void
@@ -27,7 +27,7 @@ package
 			signalCommandMap.mapSignalClass(MediatorRegisteredSignal,AddResultCommand);
 			
 			mediatorMap.mapView(TestView2,TestViewMediator);
-			mediatorMap.mapView(RobotlegsBenchmarker,RobotlegsBenchmarkerMediator);
+			mediatorMap.mapView(RobotlegsMediatorMapBenchmarker,RobotlegsMediatorMapBenchmarkerMediator);
 			
 		}
 		

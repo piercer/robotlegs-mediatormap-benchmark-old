@@ -38,7 +38,7 @@
 	</fx:Script>
 	
 	<fx:Declarations>
-		<local:RobotlegsBenchmarkerContext contextView="{this}"/>		
+		<local:RobotlegsMediatorMapBenchmarkerContext contextView="{this}"/>		
 	</fx:Declarations>
 	
 	<s:layout>
